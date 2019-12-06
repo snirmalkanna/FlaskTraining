@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Post page</title>
+{% endblock %}
+
+{% block body %}
+
+<h1> Edit Posts</h1>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Edit BlogPost</h5>
+                    <form class="form-signin" action="/searchPosts/{{post.id}}" method="POST">
+                        <div class="form-label-group">
+                            <input type="text" name="title" class="form-control" placeholder="Title" value={{post.title}} required autofocus>
+                            <label for="title">Title</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name" value={{post.name}} required>
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="text" name="age" class="form-control" placeholder="Age" value={{post.age}} required>
+                            <label for="age">Age</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+    {% endblock %}
